@@ -3,7 +3,7 @@ import random
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('6293877326:AAGl7OniyRAXgJr4JSh2NoWGr6oFQcTkC1g')
+bot = telebot.TeleBot('api token')
 
 def send_comic(message):
 
