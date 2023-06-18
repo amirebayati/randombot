@@ -104,7 +104,7 @@ def send_welcome(message):
 
     bot.reply_to(message, ' ', reply_markup=keyboard)
 
-# Start the bot
+print("starting...")
 bot.polling()
 
 
