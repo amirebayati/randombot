@@ -21,8 +21,6 @@ def send_meme(message):
     response = requests.get('')
 
     memes = response.json()['data']['memes']
-
-    # Choose a random meme
     meme = random.choice(memes)
 
     image_url = meme['url']
@@ -35,13 +33,9 @@ def send_kitten(message):
     width = random.randint(200, 600)
     height = random.randint(200, 600)
 
-
     url = f'http://placekitten.com/{width}/{height}'
-
-
     bot.send_photo(message.chat.id, url)
-
-
+    
 def send_dog(message):
 
     response = requests.get('')
