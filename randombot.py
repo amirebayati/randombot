@@ -5,9 +5,9 @@ from telebot import types
 
 bot = telebot.TeleBot('6293877326:AAGl7OniyRAXgJr4JSh2NoWGr6oFQcTkC1g')
 
-def send_xkcd(message):
+def send_comic(message):
 
-    response = requests.get('https://xkcd.com/info.0.json')
+    response = requests.get('')
     max_comic_id = response.json()['num']
     comic_id = random.randint(1, max_comic_id)
     response = requests.get(f'https://xkcd.com/{comic_id}/info.0.json')
@@ -18,7 +18,7 @@ def send_xkcd(message):
 
 def send_meme(message):
 
-    response = requests.get('https://api.imgflip.com/get_memes')
+    response = requests.get('')
 
     memes = response.json()['data']['memes']
 
@@ -44,7 +44,7 @@ def send_kitten(message):
 
 def send_dog(message):
 
-    response = requests.get('https://dog.ceo/api/breeds/image/random')
+    response = requests.get('')
     data = response.json()
 
 
@@ -55,10 +55,9 @@ def send_dog(message):
 
 def send_random_user(message):
 
-    response = requests.get('https://randomuser.me/api/')
+    response = requests.get('')
     data = response.json()['results'][0]
 
-   
     name = f"{data['name']['first']} {data['name']['last']}"
     email = data['email']
     phone_number = data['phone']
@@ -77,31 +76,31 @@ def send_random_user(message):
 
 
 keyboard = types.ReplyKeyboardMarkup(row_width=2)
-xkcd_button = types.KeyboardButton('🗯 کمیک')
-meme_button = types.KeyboardButton('🗿 میم')
-kitten_button = types.KeyboardButton('🐱 گوربه')
-dog_button = types.KeyboardButton('🐶 هاپو')
-randomuser_button = types.KeyboardButton('🙋🏻‍♀️ یوزر')
+xkcd_button = types.KeyboardButton('')
+meme_button = types.KeyboardButton('')
+kitten_button = types.KeyboardButton('')
+dog_button = types.KeyboardButton('')
+randomuser_button = types.KeyboardButton('')
 keyboard.add(xkcd_button, meme_button, kitten_button, dog_button, randomuser_button)
 
 
-@bot.message_handler(func=lambda message: message.text == '🗯 کمیک')
+@bot.message_handler(func=lambda message: message.text == '')
 def handle_xkcd_button(message):
     send_xkcd(message)
 
-@bot.message_handler(func=lambda message: message.text == '🗿 میم')
+@bot.message_handler(func=lambda message: message.text == '')
 def handle_meme_button(message):
     send_meme(message)
 
-@bot.message_handler(func=lambda message: message.text == '🐱 گوربه')
+@bot.message_handler(func=lambda message: message.text == '')
 def handle_kitten_button(message):
     send_kitten(message)
 
-@bot.message_handler(func=lambda message: message.text == '🐶 هاپو')
+@bot.message_handler(func=lambda message: message.text == '')
 def handle_dog_button(message):
     send_dog(message)
 
-@bot.message_handler(func=lambda message: message.text == '🙋🏻‍♀️ یوزر')
+@bot.message_handler(func=lambda message: message.text == '')
 def handle_randomuser_button(message):
     send_random_user(message)
 
