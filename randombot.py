@@ -10,7 +10,7 @@ def send_comic(message):
     response = requests.get('')
     max_comic_id = response.json()['num']
     comic_id = random.randint(1, max_comic_id)
-    response = requests.get(f'https://xkcd.com/{comic_id}/info.0.json')
+    response = requests.get(f'https://api{comic_id}/info.0.json')
     data = response.json()
 
 
@@ -33,7 +33,7 @@ def send_kitten(message):
     width = random.randint(200, 600)
     height = random.randint(200, 600)
 
-    url = f'http://placekitten.com/{width}/{height}'
+    url = f'http://api{width}/{height}'
     bot.send_photo(message.chat.id, url)
     
 def send_dog(message):
@@ -43,7 +43,7 @@ def send_dog(message):
 
 
     image_url = data['message']
-    # Send the image to the user
+  
     bot.send_photo(message.chat.id, image_url)
 
 
