@@ -65,13 +65,7 @@ python randombot.py
 - dog.ceo: عکس تصادفی سگ
 - randomuser.me: پروفایل تصادفی انسان
 
----
 
-## توسعه‌دهنده
-
-[@amirebayati](https://github.com/amirebayati)
-
----
 
 # randombot (English)
 
@@ -126,7 +120,3 @@ python randombot.py
 - placekitten for kitten images
 - dog.ceo for dog images
 - randomuser.me for random user profiles
-
-## Author
-
-[@amirebayati](https://github.com/amirebayati)
